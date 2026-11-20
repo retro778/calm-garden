@@ -1,0 +1,9 @@
+# build output
+/calm_garden
+/build/
+/dist/
+tests/test_*
+!tests/test_*.bas
+tests/tmp_*
+*.o
+*.tmp

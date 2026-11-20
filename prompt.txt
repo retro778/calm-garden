@@ -1,0 +1,457 @@
+# Project: Calm Garden — Mindfulness, Relaxation & Simulated Biofeedback Studio
+
+You are an experienced FreeBASIC developer, cross-platform desktop application engineer, UI/UX designer, and educational game developer.
+
+I want you to design, implement, test, and document a complete, polished, open-source desktop application named:
+
+**Calm Garden — Mindfulness & Relaxation Studio**
+
+The application is an interactive relaxation, mindfulness, guided breathing, and simulated biofeedback environment suitable for both children and adults.
+
+It should feel like a friendly, colorful, relaxing educational game rather than a clinical or medical application.
+
+## 1. Target Platforms and Development Environment
+
+Primary development environment:
+
+- MX Linux, 64-bit
+- FreeBASIC compiler for Linux x86_64, already installed
+- Windows 32-bit FreeBASIC compiler available through Wine32
+- Wine prefixes available for Windows compatibility testing
+
+Required deliverables:
+
+- Native Linux 64-bit executable
+- Native Windows 32-bit executable
+- Complete FreeBASIC source code
+- Build scripts for both platforms
+- README and user documentation
+- MIT license
+- Offline operation
+
+Do not use Python, JavaScript, Electron, Java, .NET, or a browser-based UI for the application.
+
+The application itself must be written in FreeBASIC.
+
+You may use appropriate native C libraries through FreeBASIC bindings when necessary.
+
+## 2. Graphics and User Interface
+
+Create a polished, fully resizable desktop application with:
+
+- A minimum logical resolution of 1024×768
+- Support for larger resolutions
+- Smooth animation targeting 60 FPS
+- A colorful, friendly, child-appropriate visual design
+- Soft pastel colors, gradients, rounded controls, and gentle transitions
+- Large, readable text
+- Mouse and keyboard support
+- Fullscreen and windowed modes
+- An accessible settings screen
+
+Prefer SDL2 through FreeBASIC bindings for cross-platform graphics, input, and window management.
+
+Use SDL2_ttf or another practical cross-platform text-rendering solution.
+
+Implement proper UTF-8 text handling, Hebrew glyph shaping, and right-to-left layout. If additional libraries such as HarfBuzz or FriBidi are required, integrate and document them.
+
+Do not pretend that reversing Hebrew strings is sufficient for correct bidirectional rendering.
+
+The application must work without an internet connection.
+
+## 3. Main Menu
+
+The main menu should include:
+
+1. Breathing Exercises
+2. Guided Relaxation
+3. Mindfulness Activities
+4. Simulated Biofeedback
+5. Relaxation Games
+6. Meditation Timer
+7. My Progress
+8. Settings
+9. About
+
+Provide a friendly animated background and optional ambient music.
+
+## 4. Breathing Exercises
+
+Implement several breathing activities:
+
+### Breathing Flower
+
+A colorful flower expands during inhalation and contracts during exhalation.
+
+Display clear instructions such as:
+
+- Breathe in
+- Breathe out
+- Rest naturally
+
+The user can configure inhalation and exhalation durations and optionally enable a comfortable pause.
+
+### Breathing Balloon
+
+A balloon inflates and deflates gently in response to the guided breathing cycle.
+
+### Ocean Breathing
+
+Animated ocean waves rise and fall to guide the user's breathing.
+
+### Star Breathing
+
+A glowing star slowly expands and contracts while the user follows the rhythm.
+
+Allow users to adjust:
+
+- Breathing pace
+- Session duration
+- Animation speed
+- Sound effects
+- Visual theme
+
+Use gentle defaults, avoid mandatory breath-holding, and allow users to stop or switch to natural breathing at any time.
+
+Do not encourage hyperventilation or competitive breath-holding.
+
+## 5. Guided Relaxation
+
+Implement:
+
+- Progressive muscle relaxation
+- Body scan
+- Gentle breathing awareness
+- Visualization of a peaceful place
+- Short bedtime relaxation
+- Five-minute relaxation break
+
+Use written instructions and optional prerecorded narration.
+
+Do not require online text-to-speech services.
+
+Make the narration system modular so additional audio files and languages can be added later.
+
+## 6. Mindfulness Activities
+
+Include:
+
+### Five Senses
+
+An interactive 5-4-3-2-1 grounding exercise.
+
+### Mindful Observation
+
+The user watches a slowly moving object and practices gentle attention.
+
+### Thought Clouds
+
+Thoughts appear as clouds drifting across the screen. The user can observe them without needing to eliminate or judge them.
+
+### Gratitude Garden
+
+Users may write short positive observations, which appear as flowers in a virtual garden.
+
+### Calm Moments
+
+A short guided exercise focused on observing the present moment.
+
+Avoid presenting mindfulness as a requirement to suppress unpleasant thoughts or emotions.
+
+## 7. Simulated Biofeedback Engine
+
+This is a central feature of the application.
+
+IMPORTANT:
+
+Without external physiological sensors, the application cannot measure actual stress, heart rate, skin conductance, muscle tension, or brain activity.
+
+Therefore, implement an explicitly labeled **SIMULATED BIOFEEDBACK** mode.
+
+The simulation may use:
+
+- Breathing animation phase
+- User-selected breathing rhythm
+- Keyboard or mouse interaction
+- Exercise completion
+- Self-reported relaxation levels
+- Demonstration waveforms generated by mathematical functions
+
+Create visually appealing simulated graphs:
+
+- Breathing rhythm waveform
+- Relaxation animation meter
+- Focus visualization
+- Animated heart-like waveform for demonstration only
+- Color-changing calmness visualization
+
+Never label simulated signals as actual medical measurements.
+
+The interface must clearly indicate:
+
+"Simulation only — no physiological sensors connected."
+
+The simulated relaxation meter must not be presented as an objective measurement of the user's emotional state.
+
+Implement an abstraction layer for possible future support of real external sensors, but do not make any hardware mandatory.
+
+## 8. Relaxation Mini-Games
+
+Create several interactive mini-games.
+
+### Zen Garden
+
+A peaceful garden grows as the user completes relaxation exercises.
+
+Include flowers, trees, butterflies, birds, and a pond.
+
+### Balloon Journey
+
+A balloon travels through a colorful sky while the user follows guided breathing.
+
+### Floating Leaves
+
+The user watches leaves floating gently along a stream.
+
+### Night Sky
+
+Stars gradually illuminate as the user completes a session.
+
+### Peaceful Aquarium
+
+Fish swim through a relaxing underwater environment.
+
+These games should not punish users for failing to relax.
+
+Avoid countdown pressure, stressful competition, loud effects, or negative scoring.
+
+Provide a reduced-motion mode for users who are sensitive to animation.
+
+## 9. Meditation Timer
+
+Implement a configurable timer with:
+
+- 1, 3, 5, 10, 15, 20, and 30-minute presets
+- Custom duration
+- Optional ambient sounds
+- Optional beginning and ending chimes
+- Pause and resume
+- Fullscreen meditation visualization
+- Session completion summary
+
+## 10. Audio System
+
+Use the BASS audio library, if licensing and platform compatibility requirements can be satisfied.
+
+Provide:
+
+- Rain
+- Ocean waves
+- Wind
+- Forest ambience
+- Birds
+- Gentle ambient music
+- Meditation chimes
+
+Use only assets that are original, public domain, CC0, or appropriately licensed for redistribution.
+
+Include attribution and license documentation where required.
+
+The application must remain usable when audio is disabled or unavailable.
+
+## 11. Child-Friendly Mode
+
+Implement a dedicated child-friendly mode with:
+
+- Larger buttons
+- Simpler instructions
+- Friendly animations
+- Shorter sessions
+- Encouraging messages
+- No competitive scoring
+- No advertisements
+- No external links during exercises
+- No accounts or personal information collection
+
+Avoid collecting identifying information about children.
+
+Provide an optional adult-oriented interface with a less playful appearance.
+
+## 12. Languages
+
+Support:
+
+- English
+- Hebrew
+
+Use external UTF-8 localization files.
+
+Allow language switching from Settings.
+
+Support proper Hebrew text shaping, right-to-left alignment, and mixed Hebrew-English text.
+
+Do not hardcode interface strings throughout the source code.
+
+## 13. Progress Tracking
+
+Save progress locally.
+
+Track:
+
+- Completed sessions
+- Total practice minutes
+- Favorite exercises
+- Optional self-reported relaxation before and after sessions
+- Practice history
+
+Do not claim that exercise completion proves a reduction in physiological stress.
+
+Provide a simple chart showing practice history and optional subjective ratings.
+
+Allow users to delete their progress and disable tracking.
+
+Do not implement cloud accounts, telemetry, advertising, or analytics.
+
+## 14. Accessibility and Safety
+
+Provide:
+
+- Adjustable font sizes
+- High-contrast mode
+- Reduced-motion mode
+- Keyboard navigation
+- Mute controls
+- No flashing visual effects
+- No sudden loud sounds
+- Clear pause and exit controls
+
+Include a short informational disclaimer explaining that Calm Garden is an educational relaxation tool, not a medical device or substitute for professional care.
+
+Avoid promises to cure anxiety, depression, insomnia, or any medical condition.
+
+## 15. Software Architecture
+
+Organize the project into maintainable modules, such as:
+
+- main.bas
+- app_state.bas
+- graphics.bas
+- ui.bas
+- animation.bas
+- breathing.bas
+- mindfulness.bas
+- relaxation.bas
+- simulated_biofeedback.bas
+- minigames.bas
+- audio.bas
+- localization.bas
+- settings.bas
+- progress.bas
+
+Use matching .bi declaration files where appropriate.
+
+Separate simulation logic, rendering, audio, localization, and persistence.
+
+Use fixed timestep or delta-time-based animation where appropriate.
+
+Do not create an unnecessarily complex framework.
+
+## 16. Build and Testing
+
+Provide:
+
+- build_linux.sh
+- build_win32.sh
+- run_linux.sh
+- README.md
+- LICENSE
+- assets/ directory
+- tests/ directory
+
+Compile and test the Linux 64-bit build first.
+
+Then compile the Windows 32-bit build and test it under the available Wine32 environment.
+
+Do not claim a build has succeeded unless the compiler actually completed successfully.
+
+Test:
+
+- Window resizing
+- Fullscreen transitions
+- Animation timing
+- Input handling
+- Language switching
+- Hebrew text rendering
+- Saving and loading
+- Session timers
+- Audio enable/disable
+- Missing assets
+- Invalid settings
+- Simulated biofeedback labeling
+- Both target platforms
+
+## 17. Implementation Plan
+
+Develop the application in phases.
+
+**Phase 1 — Foundation**
+
+Create the application structure, cross-platform graphics window, UI system, localization, settings, and build scripts.
+
+**Phase 2 — Breathing and Meditation**
+
+Implement the breathing exercises, meditation timer, and core animation engine.
+
+**Phase 3 — Mindfulness and Relaxation**
+
+Implement guided relaxation exercises and mindfulness activities.
+
+**Phase 4 — Simulated Biofeedback**
+
+Implement the simulation engine, graphs, and visual feedback.
+
+**Phase 5 — Mini-Games**
+
+Implement Zen Garden, Balloon Journey, Floating Leaves, Night Sky, and Peaceful Aquarium.
+
+**Phase 6 — Audio and Progress**
+
+Implement sound, progress tracking, and persistence.
+
+**Phase 7 — Polish and Testing**
+
+Improve animations, usability, accessibility, performance, documentation, and cross-platform compatibility.
+
+At the end of every phase:
+
+1. Compile the application.
+2. Run appropriate tests.
+3. Fix compiler errors and runtime defects.
+4. Report which features are complete.
+5. Clearly identify unfinished features.
+6. Continue to the next phase without unnecessarily rewriting working modules.
+
+## 18. Final Requirements
+
+The completed application must:
+
+- Run on MX Linux 64-bit.
+- Run on Windows 32-bit.
+- Be written primarily in FreeBASIC.
+- Offer a fully resizable graphical interface.
+- Support English and Hebrew.
+- Include multiple functional relaxation activities.
+- Include interactive animated mini-games.
+- Include clearly labeled simulated biofeedback.
+- Require no external sensors or paid subscriptions.
+- Work offline.
+- Be suitable for children and adults.
+- Be distributed as open-source software under the MIT license, with third-party components retaining their own licenses.
+
+Do not stop at a design document, prototype, or mockup.
+
+Implement the actual application incrementally, using working, tested code.
+
+Begin by inspecting the development environment, available compilers, SDL2 libraries, audio libraries, and Wine prefixes.
+
+Then create the project architecture and implement Phase 1.
